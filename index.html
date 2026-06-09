@@ -49,8 +49,17 @@
     <div class="signature">— Edoardo Micheletti</div>
     <img src="byebye.png" alt="Ciao" class="byebye">
   </div>
-  <audio autoplay loop hidden>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
+  <audio id="bg-music" loop hidden>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  document.addEventListener('click', function() {
+    const music = document.getElementById('bg-music');
+    if (music.paused) {
+      music.play();
+    }
+  }, { once: true });
+</script>
 </body>
 </html>
